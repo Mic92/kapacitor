@@ -1743,7 +1743,9 @@ func determineReduceContextCreateFn(method string, value interface{}, rc pipelin
 		}
 
 	default:
-		err = fmt.Errorf("invalid field type: %T", value)
+		fmt.Printf("fallback to float!!!!!!!!!!!!!!!!!!!!!!!!!!\n")
+		return determineReduceContextCreateFn(method, 0.0, rc)
+		//err = fmt.Errorf("invalid field type: %T", value)
 	}
 	return
 }
